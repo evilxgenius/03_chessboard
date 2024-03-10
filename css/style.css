@@ -1,0 +1,127 @@
+/*0*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*10*/
+.wrapper {
+    padding: 10px;
+}
+
+/*10*/
+.chess__row {
+    clear: both;
+}
+
+/*10*/
+.chess__col {
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: relative;
+}
+
+/* +--------------------------------------------+ */
+/*30*/
+.chess__row:first-child > .chess__col,
+/*30*/
+.chess__row:last-child > .chess__col {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 0;
+    background-color: #7f756b;
+    font-weight: bold;
+    color: white;
+}
+
+/*30*/
+.chess__row > .chess__col:first-child,
+/*30*/
+.chess__row > .chess__col:last-child {
+    width: 30px;
+    line-height: 100px;
+    text-align: center;
+    border: 0;
+    background-color: #7f756b;
+    font-weight: bold;
+    color: white;
+}
+
+/* +--------------------------------------------+ */
+/*
+   Стилі вище це аналог закоментованих стилів нижче.
+   Код відповідає принципам DRY, але як на мене читабельність ніяка,
+   залишу це тут щоб не забути що існує така гарна функція псевдоклас як is()
+   Пригодиться :)
+*/
+/* +--------------------------------------------+ */
+
+/*!*30*!*/
+/*.chess__row:first-child > .chess__col,*/
+/*!*30*!*/
+/*.chess__row:last-child > .chess__col {*/
+/*    height: 30px;*/
+/*    line-height: 30px;*/
+/*}*/
+
+/*!*30*!*/
+/*.chess__row > .chess__col:first-child,*/
+/*!*30*!*/
+/*.chess__row > .chess__col:last-child {*/
+/*    width: 30px;*/
+/*    line-height: 100px;*/
+/*}*/
+
+/*:is(.chess__row:first-child > .chess__col,*/
+/* .chess__row:last-child > .chess__col,*/
+/* .chess__row > .chess__col:first-child,*/
+/*  .chess__row > .chess__col:last-child) {*/
+/*    text-align: center;*/
+/*    border: 0;*/
+/*    background-color: #7f756b;*/
+/*    font-weight: bold;*/
+/*    color: white;*/
+/*}*/
+/* +--------------------------------------------+ */
+
+
+/*50*/
+.chess > .chess__row:first-child > .chess__col:first-child {
+    border-radius: 15px 0 0 0;
+}
+
+/*50*/
+.chess > .chess__row:first-child > .chess__col:last-child {
+    border-radius: 0 15px 0 0;
+}
+
+/*50*/
+.chess > .chess__row:last-child > .chess__col:last-child {
+    border-radius: 0 0 15px 0;
+}
+
+/*50*/
+.chess > .chess__row:last-child > .chess__col:first-child {
+    border-radius: 0 0 0 15px;
+}
+
+/*80*/
+.chess__row:nth-child(odd):not(:first-child):not(:last-child) > .chess__col:nth-child(even):not(:first-child):not(:last-child),
+/*80*/
+.chess__row:nth-child(even):not(:first-child):not(:last-child) > .chess__col:nth-child(odd):not(:first-child):not(:last-child) {
+    background-color: #b0aaa1;
+}
+
+/*11*/
+/* картинки позиціонуються відносно div.chess_col з властивістю position: relative */
+.chess__col > img {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
